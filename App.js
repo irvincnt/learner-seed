@@ -1,10 +1,10 @@
-
 import React from 'react'
+import Login from './src/components/auth/Login'
 
 export default function App() {
   return (
     <div className='container'>
-      <h1>Hola Mundote</h1>
+      <Login />
     </div>
   )
 }
