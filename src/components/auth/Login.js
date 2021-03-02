@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../styles/login.scss'
-import loginImg from '../../assets/images/login.svg'
+import loginImg from '../../assets/images/login2.svg'
 
 export default function Login() {
   return (
