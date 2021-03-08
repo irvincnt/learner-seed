@@ -10,8 +10,8 @@ export default function Login() {
       </div>
       <div className='auth-login'>
         <div className='auth-login__content'>
-          <h2>Bienvenido a Learner seed</h2>
-          <p>Inicie sesión en su cuenta y comience la aventura</p>
+          <h2 className='title'>Bienvenido a EDUCA</h2>
+          <p className='subtitle'>Inicie sesión en su cuenta y comience la aventura</p>
           <div className="form-group">
             <p className='form-label'>Email</p>
             <input name='name' className="form-control" />
