@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Login from '../components/auth/Login';
 import Register from '../components/auth/Register';
+import Dasboard from '../components/pages/Dasboard';
 
 export default function AppRouter() {
   return (
@@ -16,6 +17,8 @@ export default function AppRouter() {
           <Switch>
             <Route exact path="/" component={Login}/>
             <Route exact path="/register" component={Register}/>
+
+            <Route exact path="/dasboard" component={Dasboard}/>
 
             <Redirect to="/" />
           </Switch>
