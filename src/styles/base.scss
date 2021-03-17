@@ -1,0 +1,36 @@
+
+html {
+  background-color: #ededed;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+
+  font-family: "Poppins";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #6e6b7b;
+}
+
+p {
+  margin: 0
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

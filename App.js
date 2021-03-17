@@ -1,10 +1,10 @@
-
 import React from 'react'
+import AppRouter from './src/router/AppRouter'
 
 export default function App() {
   return (
     <div className='container'>
-      <h1>Hola Mundote</h1>
+      <AppRouter />
     </div>
   )
 }

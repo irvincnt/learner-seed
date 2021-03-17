@@ -1,0 +1,9 @@
+.dasboard {
+  height: 100vh;
+  padding-left: 50px;
+  transition: padding-left .5s;
+}
+
+.dasboard-active {
+  padding-left: 250px;
+}
