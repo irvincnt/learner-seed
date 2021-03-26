@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
-import Login from '../components/auth/Login';
-import Register from '../components/auth/Register';
-import Dasboard from '../components/pages/Dasboard';
+import Login from "../components/auth/Login";
+import Register from "../components/auth/Register";
+import Dasboard from "../components/pages/Dasboard";
 
 export default function AppRouter() {
   return (
@@ -15,15 +15,15 @@ export default function AppRouter() {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={Login}/>
-            <Route exact path="/register" component={Register}/>
+            <Route exact path="/" component={Login} />
+            <Route exact path="/register" component={Register} />
 
-            <Route exact path="/dasboard" component={Dasboard}/>
+            <Route exact path="/dasboard" component={Dasboard} />
 
             <Redirect to="/" />
           </Switch>
         </div>
-    </Router>
+      </Router>
     </div>
-  )
+  );
 }
