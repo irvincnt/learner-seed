@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/ui/sidebar.scss";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import { HiMenuAlt3, HiMenuAlt2, HiTemplate } from "react-icons/hi";
 
@@ -49,5 +49,5 @@ export default function Sidebar({ setIsActive, isActive }) {
 
 Sidebar.propTypes = {
   setIsActive: PropTypes.func.isRequired,
-  isActive: PropTypes.bool.isRequired
-}
+  isActive: PropTypes.bool.isRequired,
+};
