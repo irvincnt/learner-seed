@@ -3,7 +3,7 @@ import "../../styles/login.scss";
 import loginImg from "../../assets/images/login2.svg";
 import { useForm } from "../../hooks/useForm";
 import { useDispatch } from "react-redux";
-import { login } from "../../actions/auth";
+import { startLogin } from "../../actions/auth";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ export default function Login() {
 
   const handlerSubmit = (e) => {
     e.preventDefault();
-    dispatch(login(12345, "Lucy"));
+    dispatch(startLogin(email, password));
   };
 
   return (
