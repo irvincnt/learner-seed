@@ -3,9 +3,12 @@ import registerImg from "../../assets/images/login.svg";
 import { useForm } from "../../hooks/useForm";
 import "../../styles/register.scss";
 import validator from "validator";
+import { useDispatch } from "react-redux";
+import { startRegister } from "../../actions/auth";
 
 export default function Register() {
   const [errors, setErrors] = useState({});
+  const dispatch = useDispatch();
 
   const [formValues, handleInputChange] = useForm({
     username: "",
@@ -21,9 +24,10 @@ export default function Register() {
 
     const errorsForm = validate();
     if (Object.keys(errorsForm).length > 0) {
-      setErrors(errorsForm);
+      return setErrors(errorsForm);
     } else {
       setErrors({});
+      dispatch(startRegister(username, email, password));
     }
   };
 
