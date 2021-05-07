@@ -9,8 +9,8 @@ export default function Login() {
   const dispatch = useDispatch();
 
   const [formValues, handleInputChange] = useForm({
-    email: "irvincnt93@gmail.com",
-    password: "1234567890",
+    email: "josai@gmail.com",
+    password: "12345",
   });
 
   const { email, password } = formValues;
