@@ -9,8 +9,8 @@ export default function Login() {
   const dispatch = useDispatch();
 
   const [formValues, handleInputChange] = useForm({
-    email: "josai@gmail.com",
-    password: "12345",
+    email: "",
+    password: "",
   });
 
   const { email, password } = formValues;
@@ -35,7 +35,7 @@ export default function Login() {
             <p className="form-label">Email</p>
             <input
               type="text"
-              name="name"
+              name="email"
               className="form-control"
               autoComplete="off"
               value={email}
@@ -47,7 +47,7 @@ export default function Login() {
             <p className="form-label">Password</p>
             <input
               type="password"
-              name="name"
+              name="password"
               className="form-control"
               value={password}
               onChange={handleInputChange}

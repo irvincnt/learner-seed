@@ -18,6 +18,8 @@ export const startLogin = (email, password) => {
           name: body.name,
         })
       );
+    } else {
+      alert(`Error ${body.msg}`);
     }
   };
 };
