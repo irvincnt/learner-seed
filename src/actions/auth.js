@@ -1,5 +1,3 @@
-//import { types } from "../types/types";
-
 import { fetchWithoutToken, fetchWithToken } from "../helpers/fetch";
 import { types } from "../types/types";
 
@@ -65,7 +63,7 @@ export const startChecking = () => {
         })
       );
     } else {
-      alert(`Error ${body.msg}`);
+      console.log("[🚀 startChecking error]", body.msg);
       dispatch(checkingFinish());
     }
   };
@@ -77,3 +75,12 @@ const login = (user) => ({
   type: types.authLogin,
   payload: user,
 });
+
+export const startLogout = () => {
+  return (dispatch) => {
+    localStorage.clear();
+    dispatch(logout());
+  };
+};
+
+const logout = () => ({ type: types.authLogout });

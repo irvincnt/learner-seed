@@ -1,34 +1,50 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import { startChecking } from "../actions/auth";
 import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
 import Dasboard from "../components/pages/Dasboard";
+import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
+  const { checking, uid } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(startChecking());
-    console.log("Efecto en router");
   }, [dispatch]);
+
+  if (checking) {
+    return <h5>Espere...</h5>;
+  }
 
   return (
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/register" component={Register} />
+          <PublicRoute
+            exact
+            path="/login"
+            component={Login}
+            isAuthenticated={!!uid}
+          />
+          <PublicRoute
+            exact
+            path="/register"
+            component={Register}
+            isAuthenticated={!!uid}
+          />
 
-          <Route exact path="/dasboard" component={Dasboard} />
+          <PrivateRoute
+            exact
+            path="/dasboard"
+            isAuthenticated={!!uid}
+            component={Dasboard}
+          />
 
-          <Redirect to="/" />
+          <Redirect to="/dasboard" />
         </Switch>
       </div>
     </Router>
